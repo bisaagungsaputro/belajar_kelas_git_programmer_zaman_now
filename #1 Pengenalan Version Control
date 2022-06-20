@@ -1,0 +1,51 @@
+" Sebelum Ada Vesion Control System "
+
+1. Saat Kita Mengerjakan Pekerjaan, Kita Sering Sekali Melakukan Revisi. Misal Saja Kita Membuat Dokumen Proposal Atau Skripsi.
+
+2. Biasanya Kita Akan Simpan Dokumen Pertama Dengan Nama : document_1 , Setelah Mendapat Revisi, Kita Akan Simpan Dengan Nama : document_2 , Jika Masih Ada Revisi, Kita Akan Simpan Dengan Nama : document_3 , Dan Seterusnya.
+
+3. Kenapa Kita Lakukan Hal Tersebut ?
+Agar Kita Bisa Mengetahui Perubahan Yang Terjadi Antar Revisi Document, Dan Jika Sewaktu - Waktu Kita Perlu Menggunakan Revisi Yang Sebelumnya, Kita Bisa Menggunakannya Dengan Mudah.
+
+==========================================
+
+" Version Control System "
+
+1. Version Control Adalah Sebuah System Yang Merekam Perubahan Pada File Dari Waktu Ke Waktu, Sehingga Kita Bisa Melihat Versi Sebelumnya Jika Diinginkan.
+
+2. Version Control Sangat Populer Dikalangan Programmer, Karena Programmer Selalu Membuat Kode Program Dalam Bentuk Kode Tulisan. Dengan Version Control, Programmer Bisa Merekam Semua Perubahan Yang Terjadi, Sehingga Jika Terjadi Kesalahan, Programmer Bisa Dengan Mudah Kembali Ke Versi Sebelumnya.
+
+3. Tapi Tidak Hanya Untuk File Dalam Bentuk Text, JIka Misal Kita Adalah Graphic Designer, Kita Juga Bisa Memanfaatkan Version Control Untuk Merekam Perubahan Dari File Gambar Atau Layout, Sehingga Kita Tidak Perlu Membackup Tiap Perubahan Secara Manual.
+
+==========================================
+
+" Tipe Version Control "
+
+- Secara Garis Besar, Version Control Dibagi Menjadi 3 Yaitu :
+
+1. Local Version Control
+2. Centralized Version Control
+3. Distributed Version Control
+
+- Local Version Control -
+=> Local Version Control Merupakan Version Control Yang Berjalan Hanya Di Local Komputer.
+=> Pendekatan Ini Biasa Digunakan Karena Sederhana Dan Tidak Butuh Server, Karena Semua Riwayat Pekerjaan Disimpan Di Local Komputer.
+=> Setiap Perubahan Versi Yang Terjadi Pada File Hanya Disimpan Di Local Komputer.
+
+- Centralized Version Control -
+=> Masalah Yang Terjadi Pada Local Version Control Adalah Jika Komputer Rusak, Maka Seluruh Data Bisa Hilang.
+=> Selain Itu Agak Sulit Untuk Berkolaborasi Dengan Pengguna Lain Jika File Hanya Ada Di Satu Komputer.
+=> Untuk Menangani Masalah Ini, Kita Bisa Menggunakan Centralized Version Control
+=> Centralized Version Control Menyimpan Seluruh Data Revisi Di Server
+=> Pengguna Bisa Mengakses Data Ke Server Untuk Melihat File
+=> Kekurangannya Adalah Jika Pengguna Offline, Mereka Tidak Bisa Melihat Riwayat File Karena Semua Riwayat Hanya Ada Di Server
+=> Jika Server Down, Maka Seluruh Pengguna Tidak Bisa Melakukan Perubahan Dan Melihat Revisi File
+=> Contoh Centralized Version Control Adalah SubVersion.
+
+- Distributed Version Control -
+=> Distributed Version Control Adalah Alternatif Lain Dari Centralized Version Control.
+=> Dalam DVCs, Client Tidak Hanya Mengambil File Versi Terakhir, Namun Seluruh Riwayat Revisi Di Copy Seluruhnya.
+=> Hal Ini Menjadikan Jika Terjadi Masalah Dengan Server, Client Masih Tetap Bekerja, Memanipulasi File, Sampai Melihat Riwayat Perubahan.
+=> Bahkan Dalam DVCs, Server Bisa Lebih Dari Satu, Karena Tiap Server Isinya Sama, Full Backup Data.
+=> Contoh DVCs Adalah GIT, Mercurial Dan Lainnya.
+

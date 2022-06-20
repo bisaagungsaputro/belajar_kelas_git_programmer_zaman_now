@@ -1,0 +1,18 @@
+*** Configuration ***
+
+" Configuration "
+=> Setelah Selesai Menginstall GIT, Hal Yang Pertama Kali Kita Lakukan Adalah Melakukan Konfigurasi.
+=> Yang Paling Utama Yang Perlu Kita Konfigurasi Diawal Adalah User Name Dan User Email.
+=> Setiap Perubahan Yang Ada Pada Dalam Project GIT Akan Disisipkan Nama Dan Emailnya Supaya Tau Yang Mengubahnya Siapa.
+=> Contohnya User Name : git config --global user.name "Agung Saputro"
+=> Contohnya User Email : git config --global user.email "agungsaputroid62@gmail.com"
+=> Menggunakan Visual Studio Code :
+=> git config --global core.editor "code --wait"  => BERFUNGSI DEFAULT EDITOR "
+
+=> git config --global diff.tool "default-difftool"
+=> git config --global difftool.default-difftool.cmd "code --wait --diff $LOCAL $REMOTE"
+=> Melihat Seluruh Configuration :
+=> git config --list --show-origin
+
+
+

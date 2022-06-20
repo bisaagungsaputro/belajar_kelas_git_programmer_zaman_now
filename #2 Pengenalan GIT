@@ -1,0 +1,35 @@
+" Sejarah GIT "
+=> GIT Muncul Dengan Latar Belakang Open Source Project Linux Kernel.
+=> Tahun 1991 - 2002, Linux Kernel Di Develop Hanya Dengan Memanfaatkan Patch Dan Archived Files.
+=> Tahun 2002, Linux Kernel Mulai Menggunakan DVCs Bernama BitKeeper.
+=> Di Tahun 2005, Hubungan Antara Perusahaan Pemilik BitKeeper Dengan Komunitas Linux Kernel Kurang Baik, Sehingga Pembuat Linux, Linus Torvalds Mulai Membuat DVCs Sendiri.
+=> GIT Pertama Kali Diperkenalkan Tahun 2005, Semakin Kesini GIT Semakin Populer Dan Sekarang Menjadi DVCs Yang Paling Populer Di Dunia.
+=> GIT Sangat Cepat, Ringan Dan Baik Dalam Memanage Project Dengan Ukuran Besar.
+
+========================================================================
+
+" Pengenalan GIT "
+=> Jadi, GIT Adalah Salah Satu DVCs Yang Ada.
+=> GIT Tidak Membutuhkan Server Untuk Melakukan Perubahan Atau Melihat Riwayat Revisi, Hal Ini Dikarenakan Dalam GIT, Semua Riwayat Project Akan Selalu Di Duplikasi, Baik Itu Di Server Ataupun Di Local Komputer.
+=> Artinya Sebenarnya GIT Juga Bisa Digunakan Sebagai Local Version Control.
+=> Setiap Perubahan Yang Sering Terjadi Di GIT Akan Selalu Dibuat Signature (Tanda) Nya Menggunakan Algoritma Hashing SHA-1. Hal Ini Menjadikan Perubahan Sekecil Apapun Pasti Bisa Dideteksi Oleh GIT.
+=> Semua Hal Yang Terjadi Di GIT Secara Otomatis Akan Dicatat, Hal Ini Menjadikan Perubahan Apapun Di GIT, Pasti Selalu Bisa Dikembalikan Ke Versi Sebelumnya.
+
+========================================================================
+
+" Menginstall GIT "
+=> GIT Adalah Open Source Dan Gratis, Kita Bisa Download Aplikasi GIT Dengan Bebas.
+=> GIT Tersedia Untuk Berbagai Sistem Operasi, Seperti Windows,Mac Dan Linux.
+=> Kita Bisa Download GIT Di : https://git-scm.com/downloads
+
+========================================================================
+
+" Memastikan GIT Berjalan "
+=> GIT Merupakan Aplikasi Berbasis Terminal/Command Line, Oleh Karena Itu, Untuk Menggunakan GIT, Kita Perlu Membuat Terminal/Command Line.
+=> Untuk Mengecek Versi GIT Yang Terinstall Di Local Komputer Kita, Kita Bisa Gunakan Perintah : git --version
+
+========================================================================
+
+" Menggunakan Terminal Di Visual Studio Code "
+=> Membuka Visual Studio Code Di Terminal Dengan Ketik : code
+
