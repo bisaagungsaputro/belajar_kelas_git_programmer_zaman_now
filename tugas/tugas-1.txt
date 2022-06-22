@@ -1,2 +1,0 @@
-Contoh tugas-1.txt
-Menambah Baris Di tugas-1.txt
