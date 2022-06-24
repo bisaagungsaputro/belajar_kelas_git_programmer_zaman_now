@@ -1,0 +1,45 @@
+The Three States :
+1. Harap Diperhatikan, Ini Adalah Hal Utama Yang Wajib Dimengerti Di Git Agar Selanjutnya Bisa Mengerti Dengan Baik
+2. Git Memiliki Tiga State Terhadap File Kita : 1. Modified, 2. Staged, 3. Commited
+3. Modified / Modifikasi Artinya Kita Mengubah (Menambah, Mengedit Dan Menghapus) File, Namun Belum Disimpan Secara Permanent Ke Repository
+4. Staged Artinya Kita Menandai Modifikasi Yang Kita Lakukan Terhadap File Akan Disimpan Secara Permanent Ke Repository
+5. Commited Artinya Data Sudah Aman Disimpan Di Repository
+
+=> Jika Modified 5 File, Tapi Ingin Kita Simpan Ke Staged 3 File Aja (Bisa) / Semua Perubahan Disimpan Sementara Untuk Disiapkan Disimpan Secara Permanent Ke Dalam Repository
+=> Tidak Wajib Perubahan 5 File Sekaligus Untuk Kita Simpan
+
+Three Section / Tempat :
+1. Tiga State Sebelumnya Di Dalam Git Dilakukan Di Section Yang Berbeda - Beda, Yaitu Working Directory, Staging Index / Staging Area Dan Repository
+2. Saat Kita Melakukan Modifikasi File, Itu Dilakukan Di Working Directory
+3. Staging Area / Staging Index Merupakan Section Dimana File Sudah Disiapkan Untuk Disimpan Secara Permanent,
+   Di Staging Index Semua Informasi Perubahan File Akan Disimpan
+4. Repository Merupakan Tempat Dimana Semua File Dan Database Riwayat Versi File Disimpan
+
+Diagram Three Tree / Basic Menggunakan Git :
+3. Repository => File akan Disimpan Secara Permanent Ke Server Git Dengan Printah :
+git commit -m "Deskripsi / Keterangan"
+2. Staging Index => Menandai File Yang Mau Disimpan Sementara Sebelum Ke Repository Dengan Perintah :
+git add namafile
+Atau
+Semua File Sekaligus Dengan Menggunakan . :
+git add .
+1. Working Directory => Modifikasi
+
+Workflow :
+1. Sekarang Kita Sudah Tahu Tentang Arsitektur Three Tree, Sekarang Pertanyaannya, Bagaimana Alur Kerja Menggunakan Git
+2. Secara Sederhana, Setiap Perubahan Akan Kita Lakukan Di Working Directory
+3. Jika Ada Yang Mau Kita Siapkan Untuk Disimpan Secara Permanent, Kita Akan Bawa Perubahan Tersebut Ke Staging Index
+4. Selanjutnya, Kita Bisa Melakukan Penyimpanan Versi Baru Secara Permanent Ke Repository
+
+Diagram Workflow (1) :
+Menggunakan git add (Untuk Kita Simpan Ke Dalam Staging Index)      -       Menggunakan git commit -m "Deskripsi"
+Staging Index - File (Versi 1)                                              Repository - File (Versi 1)
+Working Directory - File (Versi 1)                                          Staging Index - File (Versi 1)
+                                                                            Working Directory - File (Versi 1)
+
+Diagram Workflow (2) :
+Menggunakan git add (Untuk Kita Simpan Ke Dalam Staging Index)      -       Menggunakan git commit -m "Deskripsi"
+Repository (Versi 1)
+Staging Index - File (Versi 2)                                              Repository - File (Versi 2) Sebelumnya Versi 1, Riwayat Versi 1 Masih Ada Dan Bisa Kembali Menggunakan Versi 1
+Working Directory - File (Versi 2)                                          Staging Index - File (Versi 2)
+                                                                            Working Directory - File (Versi 2)

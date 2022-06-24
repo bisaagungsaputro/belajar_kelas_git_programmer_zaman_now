@@ -1,18 +1,27 @@
-*** Configuration ***
+Configuration :
+- Setelah Selesai Menginstall GIT, Hal Yang Pertama Kali Kita Lakukan Adalah Melakukan Konfigurasi.
+- Yang Paling Utama Yang Perlu Kita Konfigurasi Diawali Adalah User Name Dan User Email.
 
-" Configuration "
-=> Setelah Selesai Menginstall GIT, Hal Yang Pertama Kali Kita Lakukan Adalah Melakukan Konfigurasi.
-=> Yang Paling Utama Yang Perlu Kita Konfigurasi Diawal Adalah User Name Dan User Email.
 => Setiap Perubahan Yang Ada Pada Dalam Project GIT Akan Disisipkan Nama Dan Emailnya Supaya Tau Yang Mengubahnya Siapa.
-=> Contohnya User Name : git config --global user.name "Agung Saputro"
-=> Contohnya User Email : git config --global user.email "agungsaputroid62@gmail.com"
-=> Menggunakan Visual Studio Code :
-=> git config --global core.editor "code --wait"  => BERFUNGSI DEFAULT EDITOR "
+Contohnya User Name : git config --global user.name "Bisa Agung Saputro"
+Contohnya User Email : git config --global user.email "bisaagungsaputro@gmail.com"
 
+Menggunakan Visual Studio Code :
+- Agar Mempermudah, Kita Akan Menjadikan Visual Studio Code Sebagai Default editor Untuk Git Dan Default Diff Tool,
+  Integrasi Git Ke Visual Studio Code => Ada Fitur Kita Ingin Melihat Perbedaan Dari Satu Versi Ke Versi Lainnya,
+  Kita Bisa Menampilkan Perbedaannya Ke Visual Studio Code
+  Perintahnya :
+=> git config --global core.editor "code --wait"
 => git config --global diff.tool "default-difftool"
-=> git config --global difftool.default-difftool.cmd "code --wait --diff $LOCAL $REMOTE"
-=> Melihat Seluruh Configuration :
+=> git config --global difftool.default-difftool.cmd "code --wait --diff \$LOCAL \$REMOTE"
+
+- Melihat Seluruh Configuration :
 => git config --list --show-origin
 
+Detailnya :
+file:C:/Users/HP/.gitconfig     user.email=bisaagungsaputro@gmail.com
+file:C:/Users/HP/.gitconfig     user.name=Bisa Agung Saputro
+file:C:/Users/HP/.gitconfig     diff.tool=default-difftool
+file:C:/Users/HP/.gitconfig     difftool.default-difftool.cmd=code --wait --diff \$LOCAL \$REMOTE
 
 

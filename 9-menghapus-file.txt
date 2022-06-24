@@ -1,0 +1,31 @@
+Menghapus File :
+1.Untuk Menghapus File Di Repository, Kita Cukup Lakukan Delete Filenya Di Foldernya
+2. Secara Otomatis Git Akan Mendeteksi File Yang Hilang
+3. Sama Seperti Menambah Dan Menghapus, Jika Kita Ingin Simpan Secara Permanent Di Repository,
+   Kita Harus Menambahkan Operasi Tersebut Ke Staging Index, Lalu Commit Ke Repository
+
+Kode Git Status :
+
+Changes not staged for commit:        
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)     
+        deleted:    file3.txt
+
+=> Deleted Adalah Filenya Telah Terhapus file3.txt
+=> Untuk Menyimpan Secara Permanent Perubahannya Dihapus Ini, Tetap Harus Pindahkan Ke Staging Index Lalu Repository Walapun file3.txt Sudah Tidak Ada Di Dalam Folder,
+   Tapi Secara Git Dia Masih Track file3.txt Masih Ada, Karena Riwayat - Riwayat Sebelumnya Sudah Disimpan Sama Repository, Artinya Versi Terbaru file3.txt Sudah Hilang,
+   Tapi Kalau Pindah Versi Sebelumnya file3.txt Masih Ada, Jadi Jangan Khawatir Kalau Menghapus File Karena Versi Sebelumnya Masih Ada Filenya
+
+Kode Git Status :
+git add file3.txt
+
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    file3.txt // Staging Index
+
+git commit -m "Menghapus file3.txt"
+
+[master 723843c] Menghapus file3.txt  
+ 1 file changed, 2 deletions(-)       
+ delete mode 100644 file3.txt
+
+=> Snapshot Terakhir file3.txt Sudah Hilang, Tapi Kalau Kembali Snapshot Sebelumnya Masih Ada file3.txt

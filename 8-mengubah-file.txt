@@ -1,0 +1,36 @@
+Mengubah File :
+1. Untuk Melakukan Perubahan File, Kita Cukup Lakukan Perubahan File Terhadap File Yang Sudah Ada Di Repository
+2. Secara Otomatis Git Bisa Mendeteksi Perubahan
+3. Sana Seperti Dengan Menambah File, Jika Perubahan Ingin Kita Simpan Secara Permanent, Kita Bisa Pindahkan Ke Staging Index, Lalu Commit Ke Repository
+
+Kode Git Status :
+git status
+
+Changes not staged for commit:        
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)     
+        modified:   file3.txt
+
+=> Modified Adalah Modifikasi Pada file3.txt Yaitu :
+=> Menambahkan Baris file3.txt
+
+Melihat Perubahan File :
+1. Ketika Kita Melakukan Perubahan, Git Secara Otomatis Mendeteksi Bahwa File Tersebut Berubah
+2. Jika Kita Ingin Melihat Perubahan Yang Terjadi, Kita Juga Bisa Menggunakan Git Untuk Melihat Perubahannya Dengan Perintah :
+git diff
+
+=> Kalau Pengen Tau Perubahan Apa Aja Sih Yang Terjadi Di File Tersebut, Bisa Pakai Editor Visual Studio Code Nanti Di File Baris Ada Berwarna Hijau (Ada Penambahan Yang Baru)
+
+TUGAS :
+1. Commit Perubahan file3.txt Ke Repository
+2. Ubah file1.txt Dan file2.txt Secara Bersamaan, Lalu Commit Semuanya Ke Repository
+
+- git add file3.txt
+- git commit -m "Melakukan Perubahan file3.txt"
+
+- git add .
+- git commit -m "Melakukan Perubahan file1.txt" Dan file2.txt"
+
+=> git add . => Melakukan Semua Perubahan Apapun Di Working Directory Ke Staging Index
+
+

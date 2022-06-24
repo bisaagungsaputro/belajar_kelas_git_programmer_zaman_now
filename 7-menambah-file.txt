@@ -1,0 +1,48 @@
+Menambah File :
+1. Untuk Menambah File Baru Di Repository, Kita Cukup Tambahkan Filenya Saja
+2. Secara Otomatis File Yang Kita Tambahkan Awalnya Akan Berada Di Working Directory
+3. Secara Default Saat Menambah File Baru, File Tersebut Tidak Akan Di Track Perubahannya
+4. Agar Perubahan Di Track, Kita Harus Pindahkan Dari Working Directory Ke Staging Index
+
+Kode Untracked Files (File Yang Belum Di Track, Artinya Ada File Baru, Untuk Bisa Ke Repository Pertama ke Staging Index Terlebih Dahulu Setelah Itu Baru Bisa Ke Repository) : 
+  (use "git add <file>..." to include 
+in what will be committed)
+        file1.txt
+
+=> Warna Merah file1.txt Karena Masih Dalam Working Directory
+
+nothing added to commit but untracked 
+files present (use "git add" to track)
+
+=> Untuk Kita Tambahkan Ke Staging Index Dengan Cara :
+git add
+
+Kode Memindahkan Ke Staging Index Dengan Cara :
+git add file1.txt
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to 
+unstage)
+        new file:   file1.txt
+
+=> Warna Hijau file1.txt Karena Sudah Berada Di Staging Index, Dikasih Tau Ini Adalah File Baru
+
+Kode Commit Ke Repository Dengan Cara :
+git commit -m "Menambah File Baru file1.txt" 
+
+"Menambah file1.txt" => Keterangan
+=> Ketika Melakukan git commit, Maka Semua File / Perubahan Yang Ada Di Staging Index Dia Di Commit Ke Repository Disimpan Secara Permanent
+
+Nothing To Commit, Working Tree Clean => Working Directory Bersih / Tidak Ada Perubahan Apapun
+
+TUGAS :
+1. Menambah file2.txt => Isi Menambah file2.txt
+2. menambah file3.txt => Isi Menambah file3.txt
+
+- git add file2.txt
+- git commit -m "Menambah file2.txt"
+
+- git add file3.txt
+- git commit -m "Menambah file3.txt"
+
+

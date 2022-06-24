@@ -1,0 +1,34 @@
+Repository :
+1. Repository Merupakan Sebutan Project Di Git
+2. Kita Bisa Membuat Folder Kosong Atau Folder Yang Sudah Berisi File, Lalu Membuatnya Sebagai Git Repository
+3. Atau Kita Bisa Melakukan Clone / Mengambil Repository Dari Server Di Download Ke Local, 
+   Git Repository Yang Sudah Ada Di Server Git
+
+Membuat Repository :
+- Untuk Membuat Repository, Kita Hanya Perlu Menggunakan Perintah :
+  git init
+- Dan Dilakukan Dari Dalam Folder Yang Akan Kita Jadikan Sebagai Git Repository
+- .git Merupakan Folder Yang Berisikan Database Git, Jangan Sampai Kita Mengubah Data Yang Terdapat Pada Folder .git
+=> Folder Ektensi .git => Foldernya Hidden / Folder Disembunyikan
+
+Kode Git Init :
+git init
+
+Detailnya :
+Reinitialized existing Git repository in C:/laragon/www/belajar_ke.txt       las_git_programmer_zaman_now/.git.txt       /
+- Reinitialized => Sudah Ada File .git
+- Initialized => Berhasil Membuat File .git
+
+- Terminal Ketik => code . => Buka Terminal Menuju Visual Studio Code (. Folder Saat Ini)
+
+Git Status => Digunakan Untuk Mengecek Perubahan Apa Aja Yang Terjadi, Apakah Ada File Baru, Mengubah File, File Dihapus Dan Lain Lain 
+Perintah :
+git status
+
+Detailnya :
+no Commits Yet => Tidak Ada Satupun Riwayat / Commit
+nothing to commit (create/copy files and use "git add" to track) => Tidak Ada Apapun Yang Bisa Di Commit / Tidak Ada Apapun Yang Bisa Disimpan Ke Dalam Repository Git Seperti Menambah File Baru, Mengubah File, File Dihapus Dan Lain Lain
+
+
+
+

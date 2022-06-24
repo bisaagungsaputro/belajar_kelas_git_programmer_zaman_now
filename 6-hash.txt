@@ -1,0 +1,56 @@
+Snapshot :
+1. pada Materi Sebelumnya Kita Selalu Menyebutkan Versi Pada Perubahan File
+2. Sebenarnya Perubahan Yang Dilakukan Bisa Jadi Dilakukan Secara Bersamaan Untuk Beberapa File,
+   Hal Ini Berarti Sebenarnya Tidak Ada Yang Namanya Versi File
+3. Semua Perubahan Yang Terjadi Akan Direkam Dan Kita Sebut Namanya Adalah Snapshot
+4. Snapshot Berisikan Semua Perubahan Yang Terjadi Di Semua File Yang Kita Commit
+5. Setiap Snapshot Akan Menghasilkan Hash
+
+Hash :
+1. Setiap Snapshot Yang Kita Lakukan, Semua Akan Menghasilkan Hash Sebagai Identitas Snapshotnya / Primary Key
+2. Hash Merupakan Checksum Untuk Menghitung Perubahan Yang Terjadi
+3. Git Menggunakan Algoritma SHA-1 Untuk Menghitung Hash
+4. Hash Dibutuhkan Untuk Menjaga Data Integrity, Sehingga Setiap Snapshot Yang Sudah Kita Lakukan Tidak Bisa Diubah, 
+   Hal Ini Karena Akan Secara Otomatis Merusak Hash Yang Sudah Dibuat
+5. Contoh Hash : 23189021ndfs98fdjsh8921mdce89wjj8d912
+
+Diagram Snapshot :
+321123112233
+Parent ... => Commit Sebelumnya dan Ini Masih Kosong
+Author Bisa Agung Saputro
+Message Deskripsi
+
+Snapshot A
+
+---
+
+778899789987
+Parent 321123112233 => Commit Sebelumnya / Snapshot A
+Author Bisa Agung Saputro
+Message Deskripsi
+
+Snapshot B
+
+---
+
+778899789987
+Parent 321123112233 => Commit Sebelumnya / Snapshot B
+Author Bisa Agung Saputro
+Message Deskripsi
+
+Snapshot C
+
+---
+
+Perhitungan Hash :
+1. Perhitungan Hash Dilakukan Tidak Hanya Dari Perubahan File
+2. Namun Juga Dari Parent, Author Dan Message
+3. Artinya Perubahan Yang Terjadi Pada Snapshot Sebelumnya, Maka Akan Menimbulkan Efek
+   Berantai, Karena Semua Hash Selanjutnya Akan Berubah
+4. Oleh Karena Itu, Hal Tersebut Tidak Bisa Dilakukan Di Git
+
+Head :
+1. Head Merupakan Pointer Menuju Hash Yang Paling Akhir
+2. Karena Kadang Sangat Menyulitkan Jika Harus Menuliskan Hash Value, Jika Kita Akan Menuju Ke Hash Paling Baru, Kita Gunakan Kata Head
+
+
