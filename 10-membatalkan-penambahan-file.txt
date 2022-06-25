@@ -1,0 +1,97 @@
+Membatalkan Penambahan File Working Directory :
+1. Jika Kita Menambah File Di Working Directory, Lalu Misal Kita Ingin Membatalkan Perubahannya
+2. Caranya Cukup Sederhana, Kita Hanya Perlu Menghapus File Tersebut Atau Bisa Menggunakan Perintah :
+   git clean -f
+
+=> Cocok Untuk Menghapus Semua Perubahan Filenya Yang Berada Di Dalam Working Directory
+
+Kode git clean -f :
+git clean -f 
+
+Removing filesalah1.txt
+Removing filesalah2.txt
+Removing filesalah3.txt
+
+git status
+
+On branch master
+nothing to commit, working tree clean 
+
+Membatalkan Perubahan File Berada Working Directory :
+1. Jika Kita Ingin Membatalkan Perubahan File Yang Telah Kita Lakukan, Kita Bisa Menggunakan Perintah :
+   git restore namafile
+
+file1.txt   => Isi Perubahan file1.txt
+file2.txt   => Isi Perubahan file2.txt
+
+git restore file1.txt file2.txt
+
+git status 
+
+On branch master
+nothing to commit, working tree clean 
+
+Membatalkan Penghapusan File Berada Working Directory :
+1. Penghapusan File Sebenarnya Sama Dengan Perubahan File, Jadi Jika Kita Ingin Membatalkan Penghapusan File, 
+   Kita Bisa Gunakan Perintah Yang Sama Dengan Membatalkan Perubahan File :
+   git restore namafile
+
+    On branch master
+   Changes not staged for commit:        
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)     
+        deleted:    file2.txt
+
+git restore file2.txt
+
+On branch master
+nothing to commit, working tree clean
+
+Membatalkan Dari Staging Index :
+1. Perintah Git Restore Hanya Bisa Dilakukan Untuk Membatalkan Perubahan Yang Terjadi Di Working Directory
+2. Artinya Jika Perubahan Terlanjur Kita Masukkan Ke Staging Index, Maka Untuk Membatalkannya Tidak Bisa Kita Lakukan Secara Langsung Dari Staging Index
+3. Kita Perlu Mengembalikan Posisi Dari Staging Index Ke Working Directory Terlebih Dahulu, Caranya Kita Bisa Gunakan Perintah :
+   git restore --staged namafile
+
+Kode Git Restore Di Staging Index :
+
+Delete File
+
+git add file2.txt
+
+git status
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    file2.txt
+
+=> Deleted Berwarna Hijau Karena Sudah Berada Di Staging Index
+
+git restore --staged file2.txt
+
+git status
+
+Changes not staged for commit:        
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)     
+        deleted:    file2.txt
+
+=> Deleted Berwarna Merah Karena Sudah Berada Di Working Directory
+
+git restore file2.txt
+
+git status
+
+nothing to commit, working tree clean 
+
+=> File Sudah Kembali Ke Folder
+
+Membatalkan Yang Sudah Di Commit :
+1. Bagaimana Jika Perubahan Yang Kita Lakukan Sudah Terlanjur Di Commit?
+2. Tidak Ada Cara Yang Bisa Kita Lakukan Jika Perubahan Sudah Terlanjur Di Commit
+3. Yang Bisa Kita Lakukan Adalah Dengan Dua Cara, Rollback Commit / Reset Commit Atau Revert Commit
+4. Kedua Cara Tersebut Akan Kita Bahas Di Materi Sendiri - Sendiri
+
+=> Tidak Ada Git Restore Untuk File Yang Sudah Di Commit
+
+ 
