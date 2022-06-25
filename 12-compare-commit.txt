@@ -1,0 +1,83 @@
+Compare Commit / Membandingkan Commit :
+1. Git Memiliki Fitur Untuk Membandingkan Antara Commit Dengan Commit Lainnya
+2. Namun Jangan Sampai Salah Pengertian, Membandingkan Disini Adalah Membandingkan Snapshot Hasil Commit,
+   Bukan Perubahan Yang Terjadi Antara Commit
+3. Misal Pada Commit Sebelumnya Kita Pernah Menambah file3.txt, Namun Jika Kita Bandingkan Antara Commit Pertama
+   Dan Terakhir (HEAD), Hasilnya Hanyalah Perbandingan Antara fil1 Dan file2, Tidak Ada file3
+4. Hal Ini Dikarenakan Membandingkan Commit Bukanlah Membandingkan Perubahan Yang Pernah Terjadi,
+   Melainkan Membandingkan Hasil Di Commit
+5. Untuk Membandingkan Commit, Kita Bisa Gunakan Perintah :
+   git diff hash1 hash2
+
+Kode Git Diff hash1 hash2 :
+git diff e713386 HEAD
+
+diff --git a/file1.txt b/file1.txt    
+index f16889f..3ad0eee 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -1 +1,2 @@
+-Menambah file1.txt
+\ No newline at end of file
++Menambah file1.txt
++Menambah Baris file1.txt
+\ No newline at end of file
+
+diff --git a/file2.txt b/file2.txt    
+new file mode 100644
+index 0000000..6749834
+--- /dev/null
++++ b/file2.txt
+@@ -0,0 +1,2 @@
++Menambah file2.txt
++Menambah Baris file2.txt
+\ No newline at end of file
+
+=> Commit Pertama Dengan Commit Terakhir / Terbaru
+
+---
+
+git diff e713386 2868810
+
+diff --git a/file1.txt b/file1.txt    
+index f16889f..3ad0eee 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -1 +1,2 @@
+-Menambah file1.txt
+\ No newline at end of file
++Menambah file1.txt
++Menambah Baris file1.txt
+\ No newline at end of file
+
+diff --git a/file2.txt b/file2.txt    
+new file mode 100644
+index 0000000..6749834
+--- /dev/null
++++ b/file2.txt
+@@ -0,0 +1,2 @@
++Menambah file2.txt
++Menambah Baris file2.txt
+\ No newline at end of file
+
+diff --git a/file3.txt b/file3.txt    
+new file mode 100644
+index 0000000..b0c42d6
+--- /dev/null
++++ b/file3.txt
+@@ -0,0 +1,2 @@
++Menambah file3.txt
++Menambah Baris file3.txt
+\ No newline at end of file
+
+=> Hasilnya Banyak Sekali Perubahannya
+
+Difftool :
+1. Sebelumnya Kita Sudah Melakukan Pengaturan Menggunakan Visual Studio Code Untuk Melihat Diff
+2. Jika Kita Ingin Menggunakan Visual Studio Code Untuk Melihat Perbedaan Antar Commit, Kita Bisa Gunakan Perintah :
+   git difftool hash1 hash2
+
+Kode Git Difftool Hash1 Hash2 :
+git difftool e713386 HEAD
+
+
