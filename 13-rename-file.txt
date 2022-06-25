@@ -1,0 +1,50 @@
+Rename File :
+1. Hal Yang Menarik Di Git Adalah Git Bisa Mendeteksi Rename File
+2. Secara Sederhana Sebenarnya Rename File Merupakan Operasi Gabungan Antara Hapus File,
+   Lalu Menambah File Baru Dengan Isi Yang Sama
+3. Namun Git Bisa Otomatis Mendeteksi Jika Terjadi Perubahan Nama File, Karena Isi File Sebagian Besar Masih Sama
+
+Kode Rename File Working Directory :
+=> Ubah Nama File Dari file2.txt Dan Diubah Menjadi file_2.txt
+
+git status
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    file2.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file_2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+=> Jadi Git Membacanya File2.txt Telah Terhapus, Lalu file_2.txt Adalah Menambah File
+
+Kode Rename File Staging Index :
+git add file2.txt
+git status
+
+Change to be committed:
+    (use "git restore --staged <file>... " to unstage)
+        deleted:    file2.txt
+
+Untracked files:
+    (use "git add <file>... " to include in what will be committed)
+        file_2.txt
+
+=> delete file2.txt Berwarna Hijau Karena Sudah Berada Dalam Staging Index
+=> Untracked file_2.txt Berwarna Merah Karena File Baru Yang Masih Berada Dalam Working Directory
+
+git add file_2.txt
+git status
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    file2.txt -> file_2.txt
+
+=> file2.txt -> file_2.txt Berwarna Hijau Karena Sudah Berada Di Staging Index 
+   (Git Bisa Baca Bahwa Kedua Tersebut Isinya Sama Dan Filenya Cuma Direname Saja)
+
+
