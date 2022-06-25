@@ -1,0 +1,142 @@
+Commit Log :
+1. Git Adalah Distributed Version Control, Artinya Walapun Kita Repository Di Local Komputer Kita,
+   Semua Riwayat Perubahan Disimpan Di Komputer Kita
+2. Kekurangannya Menjadi Makin Lama Repository Akan Semakin Besar Ukurannya,
+   Namun Keuntungannya, Kita Bisa Melihat Semua Riwayat Commit Atau Disebut Commit Log
+3. Untuk Melihat Commit Log, Kita Bisa Gunakan Perintah :
+   git log
+
+Kode Git Log :
+git log
+
+commit 723843ca22844a39d6b60d3930cc037debc6203e (HEAD -> master)
+Author: Bisa Agung Saputro <bisaagungsaputro@gmail.com>
+Date:   Fri Jun 24 17:05:01 2022 +0700
+    Menghapus file3.txt
+
+commit 2868810a60f1d7b1c677edf484150f800001b300
+Author: Bisa Agung Saputro <bisaagungsaputro@gmail.com>
+Date:   Fri Jun 24 16:47:58 2022 +0700
+    Melakukan Perubahan file1.txt Dan 
+file2.txt
+
+commit b62e3a6e22bf356f7db0875626e37e8ef39d682f
+Author: Bisa Agung Saputro <bisaagungsaputro@gmail.com>
+Date:   Fri Jun 24 16:47:00 2022 +0700
+    Melakukan Perubahan file3.txt     
+
+commit d3f3acf1fb876c900323546300cc1a9f8c019ee5
+Author: Bisa Agung Saputro <bisaagungsaputro@gmail.com>
+Date:   Fri Jun 24 13:49:00 2022 +0700
+    Menambah file2.txt Dan file3.txt  
+
+commit e713386b653b2588e4799fa1ca3c0721a8ff3546
+Author: Bisa Agung Saputro <bisaagungsaputro@gmail.com>
+Date:   Fri Jun 24 13:33:49 2022 +0700
+    Menambah file1.txt
+
+=> HEAD -> Master Adalah Snapshot Yang Paling Baru
+=> Menghapus file3.txt Adalah Pesan / Deskripsi
+
+Log Sederhana :
+1. Kadang Kita Hanya Ingin Melihat Commit Log Messagenya / Deskripsi Saja Atau Istilahnya Adalah Versi Sederhana Saja
+2. Untuk Melakukan Itu, Kita Bisa Gunakan Perintah :
+   git log --oneline
+
+Kode Git Log --OneLine :
+git log --oneline
+
+723843c (HEAD -> master) Menghapus file3.txt
+2868810 Melakukan Perubahan file1.txt 
+Dan file2.txt
+b62e3a6 Melakukan Perubahan file3.txt 
+d3f3acf Menambah file2.txt Dan file3.txt
+e713386 Menambah file1.txt
+
+Graph :
+1. Saat Nanti Kita Sudah Belajar Tentang Git Branching, Kadang Kita Ingin Melihat Commit Log Dengan Hubungannya Dengan Commit Log Sebelumnya
+2. Hal Ini Bisa Kita Lakukan Menggunakan Perintah :
+   git log --oneline --graph
+
+Kode Git Log --OneLine --Graph :
+git log --oneline --graph
+
+* 723843c (HEAD -> master) Menghapus file3.txt
+* 2868810 Melakukan Perubahan file1.txt Dan file2.txt
+* b62e3a6 Melakukan Perubahan file3.txt
+* d3f3acf Menambah file2.txt Dan file3.txt
+* e713386 Menambah file1.txt
+
+=> Kalau Menggunakan Git Graph Kompleks, Dia Akan Bercabang Masuk Ke Utama Karena Harus Menggunakan Branching
+
+Melihat Detail Commit :
+1. Kadang Kita Ingin Melihat Detail Perubahan Yang Terjadi Pada Sebuah Commit
+2. Untuk Melakukan Itu, Kita Bisa Gunakan Perintah :
+   git show 723843c / Hash
+
+Kode Git Show 723843c :
+git show 723843c
+
+Author: Bisa Agung Saputro <bisaagungsaputro@gmail.com>
+Date:   Fri Jun 24 17:05:01 2022 +0700
+    Menghapus file3.txt
+
+diff --git a/file3.txt b/file3.txt    
+deleted file mode 100644
+index b0c42d6..0000000
+--- a/file3.txt
++++ /dev/null
+@@ -1,2 +0,0 @@
+-Menambah file3.txt
+-Menambah Baris file3.txt
+\ No newline at end of file
+
+=> Berwarna Merah Berarti File Terhapus
+
+Melihat Perubahan Terakhir :
+git show HEAD
+
+Author: Bisa Agung Saputro <bisaagungsaputro@gmail.com>
+Date:   Fri Jun 24 17:05:01 2022 +0700
+    Menghapus file3.txt
+
+diff --git a/file3.txt b/file3.txt    
+deleted file mode 100644
+index b0c42d6..0000000
+--- a/file3.txt
++++ /dev/null
+@@ -1,2 +0,0 @@
+-Menambah file3.txt
+-Menambah Baris file3.txt
+\ No newline at end of file
+
+=> Berwarna Merah Berarti File Terhapus
+
+---
+
+git show d3f3acf
+
+Author: Bisa Agung Saputro <bisaagungsaputro@gmail.com>
+Date:   Fri Jun 24 13:49:00 2022 +0700
+    Menambah file2.txt Dan file3.txt  
+
+diff --git a/file2.txt b/file2.txt    
+new file mode 100644
+index 0000000..c96b4e2
+--- /dev/null
++++ b/file2.txt
+@@ -0,0 +1 @@
++Menambah file2.txt
+\ No newline at end of file
+diff --git a/file3.txt b/file3.txt    
+new file mode 100644
+index 0000000..793227d
+--- /dev/null
++++ b/file3.txt
+@@ -0,0 +1 @@
++Menambah file3.txt
+\ No newline at end of file
+
+=> Berwarna Hijau Karena Menambah file2.txt Dan file3.txt
+
+
