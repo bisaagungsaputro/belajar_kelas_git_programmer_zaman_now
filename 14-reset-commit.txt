@@ -1,0 +1,168 @@
+Reset Commit :
+1. Sebelumnya Kita Sudah Tahu Membatalkan Perubahan, Namun Bagaimana Jika Ternyata Perubahan Sudah Terlanjur Kita Commit Ke Repository
+2. Untuk Hal Seperti Itu, Kita Bisa Melakukan Reset Commit
+3. Reset Commit Merupakan Mekanisme Dimana Kita Menggeser HEAD Pointer Ke Posisi Commit Yang Kita Mau,
+   Artinya Commit Selanjutnya Akan Dilakukan Pada Posisi HEAD Baru
+4. Untuk Melakukan Reset Commit, Kita Bisa Gunakan Perintah :
+   git reset <mode> hash
+5. Ada Beberapa Mode Pengaturan Melakukan Reset Commit
+
+Diagram Git Reset :
+git reset <mode> 3456
+
+1234 - 2345 - 3456 - 4567 - 5678
+
+              HEAD          HEAD Yang Terbaru Dan Yang Terkena Digeser (4567) Akan Dihilangkan
+
+=> HEAD Baru Sekarang Adalah 3456
+
+Mode Git Reset :
+1. --soft, Memindahkan HEAD Pointer, Namun Tidak Melakukan Perubahan Apapun Di Staging Index Dan Working Directory
+2. --mixed(Default), Memindahkan HEAD Pointer, Mengubah Staging Index Menjadi Sama Seperti Dengan Repository,
+   Namun Tidak Mengubah Apapun Di Working Directory
+3. --hard, Memindahkan HEAD Pointer Dan Mengubah Staging Index Dan Working Directory Sehingga Sama Dengan Repository
+
+=> Soft Yang Paling Aman 
+
+Kode Mode Git Reset :
+git log --oneline
+
+282e922 (HEAD -> master) Mengubah file2.txt Menjadi file_2.txt
+723843c Menghapus file3.txt
+2868810 Melakukan Perubahan file1.txt 
+Dan file2.txt
+b62e3a6 Melakukan Perubahan file3.txt 
+d3f3acf Menambah file2.txt Dan file3.txt
+e713386 Menambah file1.txt
+
+git status
+
+On branch master
+nothing to commit, working tree clean
+
+
+git reset --soft 723843c
+
+git status
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    file2.txt -> file_2.txt
+
+=> Hanya Memindahkan Posisi HEAD Dan Bukan Memindahkan Staging Index Dan Working Directory
+
+git log --oneline
+
+723843c (HEAD -> master) Menghapus file3.txt
+2868810 Melakukan Perubahan file1.txt 
+Dan file2.txt
+b62e3a6 Melakukan Perubahan file3.txt 
+d3f3acf Menambah file2.txt Dan file3.txt
+e713386 Menambah file1.txt
+
+
+ git reset --soft 282e922
+
+ git status
+
+ nothing to commit, working tree clean
+
+ git log --oneline
+
+ 282e922 (HEAD -> master) Mengubah file2.txt Menjadi file_2.txt
+723843c Menghapus file3.txt
+2868810 Melakukan Perubahan file1.txt 
+Dan file2.txt
+b62e3a6 Melakukan Perubahan file3.txt 
+d3f3acf Menambah file2.txt Dan file3.txt
+e713386 Menambah file1.txt
+
+=> Kembali Maju Lagi Seperti HEAD Semula
+
+Rewrite Riwayat Commit :
+1. Jika Kita Melakukan Reset, Namun Kita Belum Membuat Commit Baru
+2. Kita Masih Bisa Kembali Maju Lagi Ke Commit Yang Paling Baru
+3. Namun Jika Kita Membuat Commit Baru, Secara Otomatis Commit Lama Akan Ditimpa Oleh commit Baru
+
+Contoh Diatas, Kembali Maju Lagi Seperti HEAD Semula
+
+Kode Git Reset Mixed :
+git reset --mixed 723843c
+git status
+
+Changes not staged for commit:        
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)     
+        deleted:    file2.txt
+
+Untracked files:
+  (use "git add <file>..." to include 
+in what will be committed)
+        file_2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+=> Berwarna Merah Karena Berada Dalam Working Directory
+
+git log --oneline
+
+723843c (HEAD -> master) Menghapus file3.txt
+2868810 Melakukan Perubahan file1.txt 
+Dan file2.txt
+b62e3a6 Melakukan Perubahan file3.txt 
+d3f3acf Menambah file2.txt Dan file3.txt
+e713386 Menambah file1.txt
+
+git reset --mixed 282e922
+git status
+
+On branch master
+nothing to commit, working tree clean
+
+=> Kembali Maju Lagi Seperti HEAD Semula
+
+Kode Git Reset Hard :
+
+git log --oneline
+
+282e922 (HEAD -> master) Mengubah file2.txt Menjadi file_2.txt
+723843c Menghapus file3.txt
+2868810 Melakukan Perubahan file1.txt 
+Dan file2.txt
+b62e3a6 Melakukan Perubahan file3.txt 
+d3f3acf Menambah file2.txt Dan file3.txt
+e713386 Menambah file1.txt
+
+git reset --hard 723843c
+
+git status
+
+On branch master
+nothing to commit, working tree clean
+
+git log --oneline
+
+723843c (HEAD -> master) Menghapus file3.txt
+2868810 Melakukan Perubahan file1.txt 
+Dan file2.txt
+b62e3a6 Melakukan Perubahan file3.txt 
+d3f3acf Menambah file2.txt Dan file3.txt
+e713386 Menambah file1.txt
+
+=> Selama Belum Membuat Commit Baru, Teman - Teman Bisa Kembali Lagi Ke Commit Semula / Yang Terakhir
+
+$ git reset --hard 282e922
+
+HEAD is now at 282e922 Mengubah file2.txt Menjadi file_2.txt
+
+$ git log --oneline
+
+282e922 (HEAD -> master) Mengubah file2.txt Menjadi file_2.txt
+723843c Menghapus file3.txt
+2868810 Melakukan Perubahan file1.txt 
+Dan file2.txt
+b62e3a6 Melakukan Perubahan file3.txt 
+d3f3acf Menambah file2.txt Dan file3.txt
+e713386 Menambah file1.txt
+
+
