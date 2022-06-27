@@ -1,0 +1,23 @@
+Ignore :
+1. Kadang Saat Membuat Aplikasi, Tidak Semua File Ingin Kita Track Di Git, Contoh Seperti File Log,
+   Hasil Kompilasi, Kadang Itu Tidak Butuh Di Track Di Git
+2. Git Memiliki Fitur Ignore, Dimana Kita Bisa Meminta Git Secara Otomatis Tidak Mentrack File Di Git
+3. Caranya Kita Bisa Tambahkan File .gitignore Di Repository
+4. Lalu Kita Bisa Tambahkan Tiap Baris Di File .gitignore Berisikan File Atau Folder Yang Tidak Kita Ingin Track
+
+Contoh :
+=> Membuat File Bernama .gitignore
+=> Isi :
+# Ignore Folder Log
+log/
+
+# Ignore File Ektension .backup
+*.backup
+
+# Ignore ignore.txt
+ignore.txt
+
+# Ignore bebas.php = File Bahasa Pemprograman
+bebas.php
+
+=> Yang Di Track Cuma .gitignore Saja, Yang Masuk Ke Working Directory (File Yang Tidak Penting Untuk Kita Masukin Ke Repository)
