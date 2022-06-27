@@ -1,0 +1,61 @@
+Snapshot Sebelumnya :
+1. Git Memiliki Fitur Seperti Mesin Waktu, Dimana Kita Bisa Kembali Pada Snapshot Sebelumnya 
+2. Kita Bisa Tentukan Kemana Tujuan Snapshot Kita Hanya Dengan Menggunakan Hash Commit
+3. Cara Jika Kita Ingin Menuju Ke Snapshot Tertentu, Cukup Gunakan Perintah :
+   git checkout hash
+4. Jika Ingin Kembali Ke Paling Awal, Kita Bisa Gunakan Perintah :
+   git checkout namabranch
+
+Git Branch :
+1. Materi Branching Akan Dibahas Pada Course Terpisah, Namun Secara Default Saat Kita Membuat Git Repository,
+   Maka Secara Otomatis Git Akan Membuat Branch
+2. Untuk Melihat Nama Branch Saat Ini, Kita Bisa Gunakan Perintah :
+   git branch --show-current
+
+=> Default branch Ada :
+1. master
+2. Main
+
+Kode git checkout master :
+git log --oneline
+
+4ae7e98 (HEAD -> master) Menambah file3.txt Sebanyak 2 Baris
+282e922 Mengubah file2.txt Menjadi file_2.txt
+723843c Menghapus file3.txt
+2868810 Melakukan Perubahan file1.txt 
+Dan file2.txt
+b62e3a6 Melakukan Perubahan file3.txt 
+d3f3acf Menambah file2.txt Dan file3.txt
+e713386 Menambah file1.txt
+
+git checkout 282e922
+
+Note: switching to '282e922'.
+
+You are in 'detached HEAD' state. You 
+can look around, make experimental    
+changes and commit them, and you can discard any commits you make in this   
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to 
+retain commits you create, you may    
+do so (now or later) by using -c with 
+the switch command. Example:
+
+  git switch -c <new-branch-name>     
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 282e922 Mengubah file2.txt Menjadi file_2.txt
+
+=> Maka file3.txt Hilang, Karena file3.txt Versi Terakhir
+=> Untuk Mengembalikan Lagi Ke Versi Terakhir Dengan Perintah Sesuai Dengan Branch :
+git checkout master
+
+Previous HEAD position was e713386 Menambah file1.txt
+Switched to branch 'master'
+
