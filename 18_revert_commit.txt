@@ -68,3 +68,8 @@ Dan file2.txt
 b62e3a6 Melakukan Perubahan file3.txt 
 d3f3acf Menambah file2.txt Dan file3.txt
 e713386 Menambah file1.txt
+
+=> Membatalkan Perubahan Sebelumnya (Yang Lebih Aman Dibandingkan Menggunakan Reset)
+=> Kalau Reset Berarti Semua Setelahnya Di Commit Akan Hilang
+
+
