@@ -1,0 +1,70 @@
+Revert Commit :
+1. Git Memiliki Fitur Revert Commit Yaitu Fitur Untuk Membatalkan Commit Yang Sudah Kita Lakukan Dengan Cara Membuat Commit Baru
+   Yang Membatalkan Commit Sebelumnya
+2. Misal Kita Sudah Melakukan Commit Data Perubahan Dari Text Saputro Menjadi Saputra, Jika Kita Revert,
+   Secara Otomatis Akan Membuat Commit Baru Dengan Melakukan Perubahan Dari Saputra Ke Saputro
+3. Untuk Melakukan Revert Commit, Kita Bisa Gunakan Perintah :
+   git revert hash
+
+Kode Git Revert Hash :
+
+git log --oneline
+
+4ae7e98 (HEAD -> master) Menambah file3.txt Sebanyak 2 Baris
+282e922 Mengubah file2.txt Menjadi file_2.txt
+723843c Menghapus file3.txt
+2868810 Melakukan Perubahan file1.txt 
+Dan file2.txt
+b62e3a6 Melakukan Perubahan file3.txt 
+d3f3acf Menambah file2.txt Dan file3.txt
+e713386 Menambah file1.txt
+
+git revert 282e922
+
+Revert "Mengubah file2.txt Menjadi file_2.txt"
+
+This reverts commit 282e92217821a18ee387b3c8607563ccafac6cd9.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Changes to be committed:
+#	renamed:    file_2.txt -> file2.txt
+#
+
+=> Kebalikannya Rename Misalnya Nam File Sebelumnya file_2.txt Menjadi file2.txt
+=> Dan Membuat Hash Baru / Versi Terbaru
+=> Bisa Ubah Semua Pesannya = Mengubah "Dari file_2.txt Menjadi file2.txt"
+
+hint: Waiting for your editor to close[master 230a1e8] Mengubah "Dari file_2.txt Menjadi file2.txt"
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename file_2.txt => file2.txt (100%)
+
+=> Berhasil Ke Ubah Dari file_2.txt Menjadi file2.txt
+
+git log --oneline
+
+230a1e8 (HEAD -> master) Mengubah "Dari file_2.txt Menjadi file2.txt"       
+4ae7e98 Menambah file3.txt Sebanyak 2 
+Baris
+282e922 Mengubah file2.txt Menjadi file_2.txt
+723843c Menghapus file3.txt
+2868810 Melakukan Perubahan file1.txt 
+Dan file2.txt
+b62e3a6 Melakukan Perubahan file3.txt 
+d3f3acf Menambah file2.txt Dan file3.txt
+e713386 Menambah file1.txt
+
+=> Membuat Hash Baru / Versi Terbaru
+
+Versi Sebelumnya
+
+4ae7e98 (HEAD -> master) Menambah file3.txt Sebanyak 2 Baris
+282e922 Mengubah file2.txt Menjadi file_2.txt
+723843c Menghapus file3.txt
+2868810 Melakukan Perubahan file1.txt 
+Dan file2.txt
+b62e3a6 Melakukan Perubahan file3.txt 
+d3f3acf Menambah file2.txt Dan file3.txt
+e713386 Menambah file1.txt
