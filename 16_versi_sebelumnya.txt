@@ -1,0 +1,34 @@
+Versi Sebelumnya :
+1. Kadang Kita Sering Mengalami Masalah Dengan File Yang Sudah Kita Commit Ke Repository
+2. Git Memiliki Fitur Dimana Kita Bisa Melihat Versi File Pada Commit Sebelumnya
+3. Saat Kita Ambil Versi Sebelumnya, File Pada Commit Tersebut Akan Berada Di Staging Index
+4. Untuk Melakukannya, Kita Bisa Gunakan Perintah :
+   git checkout hash --namefile
+
+git log --oneline
+
+4ae7e98 (HEAD -> master) Menambah file3.txt Sebanyak 2 Baris
+282e922 Mengubah file2.txt Menjadi file_2.txt
+723843c Menghapus file3.txt
+2868810 Melakukan Perubahan file1.txt 
+Dan file2.txt
+b62e3a6 Melakukan Perubahan file3.txt 
+d3f3acf Menambah file2.txt Dan file3.txt
+e713386 Menambah file1.txt
+
+git checkout b62e3a6 -- file1.txt
+
+file1.txt Terbaru
+Menambah file1.txt
+Menambah Baris file1.txt
+
+Setelah git checkout b62e3a6 -- file1.txt
+file1.txt Lama
+Menambah file1.txt
+
+git restore --staged file1.txt
+git restore file1.txt
+
+git status
+On branch master
+nothing to commit, working tree clean
