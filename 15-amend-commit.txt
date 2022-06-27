@@ -1,0 +1,93 @@
+Amend Commit :
+1. Kadang Saat Sudah Melakukan Commit, Mungkin Ada Beberapa Hal Yang Terlupakan
+2. Biasanya Kita Akan Melakukan Reset Ke Commit Sebelumnya, Lalu Tambahkan Perubahan Yang Terlupakan, 
+   Lalu Kita Lakukan Commit Ulang
+3. Hal Tersebut Bisa Dilakukan Tanpa Manual Melakukan Reset, Caranya Bisa Menggunakan Perintah :
+   git commit --amend
+4. Perlu Diingat, Amend Akan Mengubah Hash Commit Karena Data Perubahan Yang Commit Bertambah
+
+Tugas :
+1. Tambahkan file3.txt
+2. Commit file3.txt Ke Repository
+3. Ubah file3.txt
+4. Commit Dengan Amend Ke Repository :
+   git commit --amend
+
+=> Hanya Mengubah Hash Saja, File Tetap Masih Sama (Tidak Rekomendasikan Menggunakan Amend Commit)
+
+Membuat File file3.txt
+
+git status
+
+Untracked files:
+  (use "git add <file>..." to include 
+in what will be committed)
+        file3.txt
+
+nothing added to commit but untracked 
+files present (use "git add" to track)
+
+=> Working Directory
+
+git add file3.txt
+
+git commit -m "Menambah file3.txt"
+
+[master 521e382] Menambah file3.txt   
+ 1 file changed, 1 insertion(+)       
+ create mode 100644 file3.txt
+
+=> Repository
+
+git status
+
+On branch master
+nothing to commit, working tree clean 
+
+git log --oneline
+
+521e382 (HEAD -> master) Menambah file3.txt
+282e922 Mengubah file2.txt Menjadi file_2.txt
+723843c Menghapus file3.txt
+2868810 Melakukan Perubahan file1.txt 
+Dan file2.txt
+b62e3a6 Melakukan Perubahan file3.txt 
+d3f3acf Menambah file2.txt Dan file3.txt
+e713386 Menambah file1.txt
+
+Menambah Baris file3.txt
+Ini Adalah file3.txt
+Masih Tetap Ada Baris Ke 2
+
+git status
+
+On branch master
+Changes not staged for commit:        
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)     
+        modified:   file3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+=> Working directory
+
+git add file3.txt
+
+git commit --amend -m "Menambah file3.txt Sebanyak 2 Baris"
+
+[master 4ae7e98] Menambah file3.txt Sebanyak 2 Baris
+ Date: Mon Jun 27 08:53:54 2022 +0700 
+ 1 file changed, 2 insertions(+)      
+ create mode 100644 file3.txt
+
+ git log --oneline
+
+4ae7e98 (HEAD -> master) Menambah file3.txt Sebanyak 2 Baris
+282e922 Mengubah file2.txt Menjadi file_2.txt
+723843c Menghapus file3.txt
+2868810 Melakukan Perubahan file1.txt 
+Dan file2.txt
+b62e3a6 Melakukan Perubahan file3.txt 
+d3f3acf Menambah file2.txt Dan file3.txt
+e713386 Menambah file1.txt
+
