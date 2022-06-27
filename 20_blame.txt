@@ -1,0 +1,42 @@
+Blame :
+1. Saat Membuat Kode Program Kita Ingin Tahu, Siapa Yang Menambahkan Baris Kode Program Tersebut Dan Apa Saja Yang Ditambahkan
+2. Git Memiliki Fitur Yang Bernama Blame, Ini Digunakan Untuk Mencari Tahu, 
+   Siapa Yang Menambah Perubahan Pada File Dan Juga Untuk Mengetahui Commitnya
+3. Caranya Kita Bisa Gunakan Perintah :
+   git blame namefile
+
+Kode Git Blame :
+git blame file1.txt
+
+2868810a (Bisa Agung Saputro 2022-06-24 16:47:58 +0700 1) Menambah file1.txt
+2868810a (Bisa Agung Saputro 2022-06-24 16:47:58 +0700 2) Menambah Baris file1.txt
+
+git show 2868810a
+
+Author: Bisa Agung Saputro <bisaagungsaputro@gmail.com>
+Date:   Fri Jun 24 16:47:58 2022 +0700
+    Melakukan Perubahan file1.txt Dan 
+file2.txt
+
+diff --git a/file1.txt b/file1.txt    
+index f16889f..3ad0eee 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -1 +1,2 @@
+-Menambah file1.txt
+\ No newline at end of file
++Menambah file1.txt
++Menambah Baris file1.txt
+\ No newline at end of file
+diff --git a/file2.txt b/file2.txt    
+index c96b4e2..6749834 100644
+--- a/file2.txt
++++ b/file2.txt
+@@ -1 +1,2 @@
+-Menambah file2.txt
+\ No newline at end of file
++Menambah file2.txt
++Menambah Baris file2.txt
+\ No newline at end of file
+
+
