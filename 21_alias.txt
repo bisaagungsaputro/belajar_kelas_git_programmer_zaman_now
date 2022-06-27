@@ -1,0 +1,24 @@
+Alias :
+1. Git Memiliki Fitur Yang Bernama Alias
+2. Dengan alias, Kita Bisa Menambah Nama Perintah Lain Untuk Perintah Yang Sudah Ada Di Git
+3. Misal Kita Bisa Menambah Perintah ko, komit Untuk Nama Lain Dari Commit Misalnya
+4. Atau Misal Menambah Alias Logline Untuk Nama Lain Dari log --oneline
+
+Kode Menambah Alias :
+
+git config --global alias.ko commit
+git config --global alias.komit commit
+git config --global alias.logone "log --oneline"
+
+=> Perintah Lebih Dari Satu Kata Menggunakan ""
+=> Harus Dilaptop Teman - Teman, Jika Ganti Laptop Harus Config Ulang Lagi
+
+Membuat file4.txt
+
+git add file4.txt
+
+git ko -m "Menambah file4.txt"
+
+git logone
+
+
